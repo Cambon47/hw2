@@ -13,9 +13,7 @@ class StoryController extends BaseController
 {
     public function home()
     {
-        // Controllo accesso
-
-        // Leggiamo username
+       
         $user = User::find(Session::get('user_id'));
         if ($user == null)
             $username = '';
@@ -46,13 +44,13 @@ class StoryController extends BaseController
 
 
         return $user->Stories;
-        //return view('mystories');
+        
     }
 
 
     public function lista()
     {
-        // Controllo accesso
+        
         if (!Session::get('user_id')) {
            return [];
         }

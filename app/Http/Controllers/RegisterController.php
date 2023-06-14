@@ -47,15 +47,15 @@ class RegisterController extends BaseController
             Session::put('error', 'existing_e');
             return redirect('register')->withInput();
         }
-        // Creazione utente
+       
         $user = new User;
         $user->username = request('username');
         $user->password = password_hash(request('password'), PASSWORD_BCRYPT);
         $user->email = request('email');
         $user->save();
-        // Login
+        
         Session::put('user_id', $user->id);
-        // Redirect alla home
+        
         return redirect('home');
 
 
@@ -95,9 +95,9 @@ class RegisterController extends BaseController
             Session::put('error', 'wrong');
             return redirect('login')->withInput();
         }
-        // Login
+        
         Session::put('user_id', $user->id);
-        // Redirect alla home
+        
         return redirect('home');
 
 
@@ -105,7 +105,7 @@ class RegisterController extends BaseController
 
     public function logout()
     {
-        // Elimina dati di sessione
+        
         Session::flush();
         return redirect('login');
     }

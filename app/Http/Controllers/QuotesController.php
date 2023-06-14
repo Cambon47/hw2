@@ -35,7 +35,7 @@ class QuotesController extends BaseController
     public function search_gifs($search)
     {
 
-        // Richiesta token
+        
         $client_id = env('GIFY_CLIENT_ID');
         $client_secret = env('GIFY_CLIENT_SECRET');
         $curl = curl_init('https://api.gfycat.com/v1/oauth/token');
