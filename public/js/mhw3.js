@@ -1,7 +1,7 @@
 // JavaScript source code
 
 function OnResponse(response) {
-	console.log(response);
+	
 	return response.json();
 	
 }
@@ -29,7 +29,7 @@ function FillSide(json) {
 	const lateral = document.querySelector('#lateral');
 	frase = document.createElement('div');
 	frase.textContent = json[0].content + '(' + json[0].author + ')';
-	console.log(json);
+	
 	lateral.appendChild(frase);
 }
 
@@ -51,12 +51,7 @@ function onModalClick() {
 	
 	
 }
-function GetToken(json) {
 
-	token = json.access_token;
-	console.log(token);
-	
-}
 
 function onClickChat() {
 	
@@ -112,7 +107,7 @@ function OnJson(json) {
 
 
 function OnGIFJson(json) {
-	console.log(json);
+	
 	const art = document.querySelector('article');
 	art.innerHTML = '';
 	if (json.found == 0) {
@@ -170,10 +165,7 @@ function onSubmit(event) {
 
 
 
-function onTokenResponse(response) {
-	console.log(response);
-	return response.json();
-}
+
 
 
 const chat = document.querySelector('#chat')
